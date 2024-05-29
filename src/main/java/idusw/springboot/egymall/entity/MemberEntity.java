@@ -3,6 +3,8 @@ package idusw.springboot.egymall.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity // Spring Data JPA의 엔티티(개체)임을 의미함
 @Table(name="member")
 

@@ -32,7 +32,8 @@ public class MemberServiceTest {
                 .idx(6L)
                 .build();
         MemberDto ret;
-        if((ret = memberService.readById(dto.getIdx())) != null)
+        //memberService.readById(dto.getIdx())) ;-> memberService.readByIdx() 변경
+        if((ret = memberService.readByIdx(dto.getIdx())) != null)
             System.out.println("success" + ret );
         else
             System.out.println("fail");
@@ -52,10 +53,10 @@ public class MemberServiceTest {
     @Test
     public void registerOne() {
         MemberDto dto = MemberDto.builder()
-                    .id("dream")
+                    .id("admin")
                     .pw("cometrue")
-                    .name("passion")
-                    .email("dream" + "@induk.ac.kr")
+                    .name("administrator")
+                    .email("admin" + "@induk.ac.kr")
                     .build();
 
         if(memberService.create(dto) > 0)
